@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Sample</title>
+</head>
+    <button id="getData">getData</button>
+    <button id="setData">setData</button>
+<body>
+    <script>
+        document.getElementById("getData").addEventListener("click", () => {
+            let url = "https://sdk.resu.io/Campaign/getCookie.js?cookieKey=getdata";
+
+            // let script = document.createElement("script");
+            // // script.src = `${url}/getCookie.js?cookieKey=getdata`;
+            // script.src = "https://sdk.resu.io/Campaign/getCookie.js?cookieKey=getdata"
+            
+            // script.onload = (event) => {
+            //     script.setRequestHeader('Custom-Header-Name', 'Custom-Header-Value');
+            //     console.log("On Load triggered");
+            // }
+
+            
+            // script.onerror = (event) => {
+            //     console.log("On error triggered");
+            // }
+
+            // document.body.appendChild(script);
+
+            fetch(url).then(res => {
+                console.log(res)
+                // res.json().then(res => {
+                //     console.log(res)
+                // })
+            })
+            
+        })
+
+        document.getElementById("setData").addEventListener("click", () => {
+            let url = "https://sdk.resu.io/Campaign/setCookie.js?cookieKey=setdata&data=eyJicm93ZXJJRCI6IjRmYmYxMTcxLTYxYWMtNDdhNS04N2NhLTRkYmQzNjNjNDdiOSIsImJyb3dlck5hbWUiOiJDaHJvbWUiLCJkb21haW5OYW1lcyI6W3siZG9tYWluTmFtZSI6ImFrcmVwby4wMDB3ZWJob3N0YXBwLmNvbSIsIlByb2ZpbGVJZCI6IlBfMUUwRDgyQjgiLCJQYXNzcG9ydElkIjoiUF8xRTBEODJCOCIsImNhbXBhaWduSWQiOiIxMjMifSx7ImRvbWFpbk5hbWUiOiJyZXN1bGFrLmdpdGh1Yi5pbyIsIlByb2ZpbGVJZCI6IlBfNEM4NDA5RDgiLCJQYXNzcG9ydElkIjoiUF80Qzg0MDlEOCIsImNhbXBhaWduSWQiOiIxMjMifSx7ImRvbWFpbk5hbWUiOiJsb2dlc2htMDUuZ2l0aHViLmlvIiwiUHJvZmlsZUlkIjoiUF80MzhBNUNBQiIsIlBhc3Nwb3J0SWQiOiJQXzQzOEE1Q0FCIiwiY2FtcGFpZ25JZCI6IjEyMyJ9XX0="
+
+            fetch(url).then(res => {
+                console.log(res)
+                // res.json().then(res => {
+                //     console.log(res)
+                // })
+            })
+        })
+    </script>
+</body>
+
+</html>
