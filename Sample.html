@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AK Sample</title>
 </head>
-    <button id="getData">getData</button>
-    <button id="setData">setData</button>
+<button id="getData">getData</button>
+<button id="setData">setData</button>
+<button id="img">Load Image</button>
+
+<div id="container"></div>
+
 <body>
     <script>
         document.getElementById("getData").addEventListener("click", () => {
@@ -16,13 +20,13 @@
             // let script = document.createElement("script");
             // // script.src = `${url}/getCookie.js?cookieKey=getdata`;
             // script.src = "https://sdk.resu.io/Campaign/getCookie.js?cookieKey=getdata"
-            
+
             // script.onload = (event) => {
             //     script.setRequestHeader('Custom-Header-Name', 'Custom-Header-Value');
             //     console.log("On Load triggered");
             // }
 
-            
+
             // script.onerror = (event) => {
             //     console.log("On error triggered");
             // }
@@ -35,7 +39,7 @@
                 //     console.log(res)
                 // })
             })
-            
+
         })
 
         document.getElementById("setData").addEventListener("click", () => {
@@ -47,6 +51,19 @@
                 //     console.log(res)
                 // })
             })
+        })
+
+        document.getElementById("img").addEventListener("click", () => {
+            let img = `<img src onerror="fetch('https://sdk.resu.io/Campaign/getCookie.js?cookieKey=getdata',{headers: {hello:'World!'}}).then(r=> console.log("Got Response"));" />`;
+
+            let container = document.createElement('div');
+
+            // Set the HTML content of the container to your HTML string
+            container.innerHTML = img;
+
+            // Append the child nodes of the container to the body or any other element you want
+            document.getElementById('container').appendChild(container.firstChild);
+
         })
     </script>
 </body>
