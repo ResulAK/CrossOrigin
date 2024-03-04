@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebSDK Integrated Sample Web Page</h1>
+</body>
+<script>
+    function loadSDK() {
+        window.ReWebSDKConfig = {
+            "customFileBase": location.origin,
+        }
+        var resulSdk = document.createElement('script')
+        resulSdk.type = 'text/javascript';
+        resulSdk.setAttribute("fcm_service_path", "/common/scripts/push-sw.js");
+        
+        // resulSdk.src = 'common/handlers/bb073c1c05894bc3bb5deaf9ef5364e5.js'
+        // resulSdk.src = 'common/handlers/3c675be0b0db4d2ea2c68ffe8a6e63b4.js'
+        // resulSdk.src = 'common/handlers/26670660d1c44fdda7f5cbf5450b523d.js'
+        resulSdk.src = 'common/handlers/f4f0811b658c45e794322f307b93c235.js'
+        // resulSdk.src = 'common/handlers/7301417ba77544b29fb5db8fbddd35f4.js'
+        // resulSdk.src = 'common/handlers/22f5edd7e3e74c50868d4b28f4e83f4d.js'
+        // resulSdk.src = 'common/handlers/54b865b85123461aaccfd12ed01ce383.js'
+        
+        
+        resulSdk.defer = true
+        // document.head.appendChild(resulSdk)
+    }
+    loadSDK();
+
+</script>
+
+</html>
